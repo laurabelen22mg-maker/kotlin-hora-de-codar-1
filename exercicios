@@ -1,0 +1,80 @@
+fun main() {
+    while (true) {
+        println("\n===== MENU DE EXERCÍCIOS =====")
+        println("1 - Mostrar nome do carro")
+        println("2 - Perguntar nome")
+        println("3 - Perguntar nome e idade")
+        println("4 - Calcular áreas (quadrado, retângulo, triângulo, círculo)")
+        println("0 - Sair")
+        print("Escolha uma opção: ")
+
+        val opcao = readLine()
+
+        when (opcao) {
+            "1" -> exibirCarro()
+            "2" -> perguntarNome()
+            "3" -> perguntarNomeIdade()
+            "4" -> calcularAreas()
+            "0" -> {
+                println("Saindo... Obrigado!")
+                break
+            }
+            else -> println("Opção inválida, tente novamente.")
+        }
+    }
+}
+
+// Exercício 1
+fun exibirCarro() {
+    val nome_do_carro = "Fusca"
+    println("O carro é: $nome_do_carro")
+}
+
+// Exercício 2
+fun perguntarNome() {
+    print("Digite seu nome: ")
+    val nomeDoUsuario = readLine()
+    println("Olá, $nomeDoUsuario")
+}
+
+// Exercício 3
+fun perguntarNomeIdade() {
+    print("Digite seu nome: ")
+    val nomeDoUsuario = readLine()
+
+    print("Digite sua idade: ")
+    val idade = readLine()
+
+    println("Olá, $nomeDoUsuario, sua idade é $idade")
+}
+
+// Exercício 4
+fun calcularAreas() {
+    // Quadrado
+    print("Digite o lado do quadrado: ")
+    val lado = readLine()!!.toDouble()
+    val areaQuadrado = lado * lado
+    println("Área do quadrado: $areaQuadrado")
+
+    // Retângulo
+    print("Digite a base do retângulo: ")
+    val baseRet = readLine()!!.toDouble()
+    print("Digite a altura do retângulo: ")
+    val alturaRet = readLine()!!.toDouble()
+    val areaRetangulo = baseRet * alturaRet
+    println("Área do retângulo: $areaRetangulo")
+
+    // Triângulo
+    print("Digite a base do triângulo: ")
+    val baseTri = readLine()!!.toDouble()
+    print("Digite a altura do triângulo: ")
+    val alturaTri = readLine()!!.toDouble()
+    val areaTriangulo = (baseTri * alturaTri) / 2
+    println("Área do triângulo: $areaTriangulo")
+
+    // Círculo
+    print("Digite o raio do círculo: ")
+    val raio = readLine()!!.toDouble()
+    val areaCirculo = 3.14 * raio * raio
+    println("Área do círculo: $areaCirculo")
+}
